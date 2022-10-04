@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>run</actionName>
+            <packagings>
+                <packaging>jar</packaging>
+            </packagings>
+            <goals>
+                <goal>process-classes</goal>
+                <goal>org.codehaus.mojo:exec-maven-plugin:3.0.0:exec</goal>
+            </goals>
+            <properties>
+                <exec.vmArgs>-DZEEBE_ADDRESS='266a0819-2a9e-44ac-9785-7077edd7c857.dsm-1.zeebe.camunda.io:443' -DZEEBE_CLIENT_ID='nNl3EDBHtwyOJvaMYiYNtG7Kl5E4qiLc' -DZEEBE_CLIENT_SECRET='FW0ingxHHd~C1o6ObKPjpgIv35jYA-cylhhsuBr4q6FYBpgTlFm3Y.qTWow2cHEx' -DCONNECTOR_CATCONNECTOR_FUNCTION=io.camunda.connector.CatConnectorFunction -DZEEBE_AUTHORIZATION_SERVER_URL='https://login.cloud.camunda.io/oauth/token'</exec.vmArgs>
+                <exec.args>${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}</exec.args>
+                <exec.appArgs></exec.appArgs>
+                <exec.mainClass>io.camunda.connector.Main</exec.mainClass>
+                <exec.executable>java</exec.executable>
+            </properties>
+        </action>
+        <action>
+            <actionName>debug</actionName>
+            <packagings>
+                <packaging>jar</packaging>
+            </packagings>
+            <goals>
+                <goal>process-classes</goal>
+                <goal>org.codehaus.mojo:exec-maven-plugin:3.0.0:exec</goal>
+            </goals>
+            <properties>
+                <exec.vmArgs>-DZEEBE_ADDRESS='266a0819-2a9e-44ac-9785-7077edd7c857.dsm-1.zeebe.camunda.io:443' -DZEEBE_CLIENT_ID='nNl3EDBHtwyOJvaMYiYNtG7Kl5E4qiLc' -DZEEBE_CLIENT_SECRET='FW0ingxHHd~C1o6ObKPjpgIv35jYA-cylhhsuBr4q6FYBpgTlFm3Y.qTWow2cHEx' -DCONNECTOR_CATCONNECTOR_FUNCTION=io.camunda.connector.CatConnectorFunction -DZEEBE_AUTHORIZATION_SERVER_URL='https://login.cloud.camunda.io/oauth/token' -agentlib:jdwp=transport=dt_socket,server=n,address=${jpda.address}</exec.vmArgs>
+                <exec.args>${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}</exec.args>
+                <exec.appArgs></exec.appArgs>
+                <exec.mainClass>io.camunda.connector.Main</exec.mainClass>
+                <exec.executable>java</exec.executable>
+                <jpda.listen>true</jpda.listen>
+            </properties>
+        </action>
+        <action>
+            <actionName>profile</actionName>
+            <packagings>
+                <packaging>jar</packaging>
+            </packagings>
+            <goals>
+                <goal>process-classes</goal>
+                <goal>org.codehaus.mojo:exec-maven-plugin:3.0.0:exec</goal>
+            </goals>
+            <properties>
+                <exec.vmArgs>-DZEEBE_ADDRESS='266a0819-2a9e-44ac-9785-7077edd7c857.dsm-1.zeebe.camunda.io:443' -DZEEBE_CLIENT_ID='nNl3EDBHtwyOJvaMYiYNtG7Kl5E4qiLc' -DZEEBE_CLIENT_SECRET='FW0ingxHHd~C1o6ObKPjpgIv35jYA-cylhhsuBr4q6FYBpgTlFm3Y.qTWow2cHEx' -DCONNECTOR_CATCONNECTOR_FUNCTION=io.camunda.connector.CatConnectorFunction -DZEEBE_AUTHORIZATION_SERVER_URL='https://login.cloud.camunda.io/oauth/token'</exec.vmArgs>
+                <exec.args>${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}</exec.args>
+                <exec.mainClass>io.camunda.connector.Main</exec.mainClass>
+                <exec.executable>java</exec.executable>
+                <exec.appArgs></exec.appArgs>
+            </properties>
+        </action>
+    </actions>
